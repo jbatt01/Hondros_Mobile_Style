@@ -10602,8 +10602,7 @@ Ext.application({
         'Player.page.ImageandAudio',
         'Player.page.CustomHTML5Page',
         'Player.page.ExternalSWFdefault',
-        'Player.page.Definitions',
-        'Player.view.override.ScrollerOverride'
+        'Player.page.Definitions'
     ],
 
     viewport: {
