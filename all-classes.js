@@ -4627,7 +4627,14 @@ Ext.define('Player.page.questions.Question', {
         this.callParent(arguments);
     },
     start: function() {
-        this.resizeScroller();
+        st = Ext.getStore("ScoTreeStore");
+                var pageNode = null;
+                for(var i=0,ln = st.data.all.length;i<ln;i++){
+                pageNode = st.data.all[i];
+                }
+				if(Player.settings.get('activateTimer')){
+				Player.app.fireEvent('startCountDown',pageNode);
+				}
     },
     cleanup: function(){},
     resizeScroller: function(){
@@ -5812,6 +5819,12 @@ Ext.define('Player.page.questions.Results', {
     initialize: function() {
         var me = this;
         me.callParent(arguments);
+		//Changed Code
+		if(Player.settings.get('activateTimer'))
+		{
+		Player.settings.set('activateTimer','false');
+		}
+		//Changed Code
         me.getComponent('reviewBtn').on('review', me.onReview, me);
         me.getComponent('emailBtn').on('email', me.onEmail, me);
         me.getComponent('printBtn').on('print', me.onPrint, me);
@@ -5829,6 +5842,9 @@ Ext.define('Player.page.Quiz', {
         scrollable: {
             direction: 'vertical',
             directionLock: true
+        },
+		refs: {
+            timeBar: '#timeBar'
         },
         pType: 'Quiz',
         quizRecord: null,
@@ -5994,6 +6010,7 @@ Ext.define('Player.page.Quiz', {
             }
         }
         
+
         for (i = 0, ln = questionsToAsk; i < ln; i++) {
             questionData = questionsList[i];
             questionRecord = quizRecord.questionsStore.findRecord('id', questionData.id);
@@ -6009,7 +6026,6 @@ Ext.define('Player.page.Quiz', {
                 }, feedbackObject));
                 me.add(panel);
             } catch (e) {
-                debugger;
                 data = '';
                 try {
                     data = JSON.stringify(questionData);
@@ -6077,8 +6093,16 @@ Ext.define('Player.page.Quiz', {
             quizRecord.set('passed', pass);
 
             if(quizRecord.raw.showresults){
-                me.getComponent('quizResults').setResults(quizRecord.data);    
+			//Changed Code
+              if(Player.settings.get('activateTimer'))
+		    {
+		    Player.settings.set('activateTimer','false');
+			timeBarId = Ext.getCmp('ext-timerbar-1');
+		    timeBarId.hide();
+		    }
+                me.getComponent('quizResults').setResults(quizRecord.data); 	 
             }
+			//Changed Code
             
 
             // SCORM Recording
