@@ -10,6 +10,9 @@ Ext.define('Player.page.Quiz', {
             direction: 'vertical',
             directionLock: true
         },
+		refs: {
+            timeBar: '#timeBar'
+        },
         pType: 'Quiz',
         quizRecord: null,
         quizMode: 'test',
@@ -174,6 +177,7 @@ Ext.define('Player.page.Quiz', {
             }
         }
         
+
         for (i = 0, ln = questionsToAsk; i < ln; i++) {
             questionData = questionsList[i];
             questionRecord = quizRecord.questionsStore.findRecord('id', questionData.id);
@@ -189,7 +193,6 @@ Ext.define('Player.page.Quiz', {
                 }, feedbackObject));
                 me.add(panel);
             } catch (e) {
-                debugger;
                 data = '';
                 try {
                     data = JSON.stringify(questionData);
@@ -257,8 +260,16 @@ Ext.define('Player.page.Quiz', {
             quizRecord.set('passed', pass);
 
             if(quizRecord.raw.showresults){
-                me.getComponent('quizResults').setResults(quizRecord.data);    
+			//Changed Code
+              if(Player.settings.get('activateTimer'))
+		    {
+		    Player.settings.set('activateTimer','false');
+			timeBarId = Ext.getCmp('ext-timerbar-1');
+		    timeBarId.hide();
+		    }
+                me.getComponent('quizResults').setResults(quizRecord.data); 	 
             }
+			//Changed Code
             
 
             // SCORM Recording
@@ -332,7 +343,7 @@ Ext.define('Player.page.Quiz', {
             quizData = quizRecord.data,
             questionData = questionRecord.data;
 
-        if(questionData.blnCorrect) {
+        if (questionData.blnCorrect) {
             quizRecord.set('correct', ++quizData.correct);
             quizRecord.set('points', quizData.points + questionData.intWeighting);
         } else {
@@ -341,38 +352,57 @@ Ext.define('Player.page.Quiz', {
         quizRecord.set('pointsPossible', quizData.pointsPossible + questionData.intWeighting);
 
         try {
-            console.log("DATA:" + JSON.stringify(questionData));
-        } catch(e) {}
+            console.log("DATA:"+JSON.stringify(questionData));
+        } catch (e) {}
 
-        if(questionData.tracking) // && using Scorm?
+        if (questionData.tracking) // && using Scorm?
         {
-            switch(questionData.trackingType) {
-            case 'MC':
+            switch (questionData.qtype) {
+            case 'MCHIMAGE':
+            case 'MCHAUDIO':
             case 'MCH':
                 try {
+                    //SCORM.CreateResponseIdentifier(questionData.correctResponse.Short, questionData.correctResponse.Long)
+                    //SCORM.CreateResponseIdentifier(questionData.response.Short, questionData.response.Long)
                     var scormResponses = [],
                         scormCorrectResponses = [],
                         tempResponse;
-                    for(var i = 0, ln = questionData.response.length; i < ln; i++) {
-                        tempResponse = questionData.response[i];
+                    for (var i = 0,ln=questionData.response.length; i < ln; i++) {
+                        tempResponse =questionData.response[i];
                         scormResponses.push(SCORM.CreateResponseIdentifier(tempResponse.Short, tempResponse.Long));
                     };
-                    for(var i = 0, ln = questionData.correctResponse.length; i < ln; i++) {
-                        tempResponse = questionData.correctResponse[i];
+                    for (var i = 0,ln=questionData.correctResponse.length; i < ln; i++) {
+                        tempResponse =questionData.correctResponse[i];
                         scormCorrectResponses.push(SCORM.CreateResponseIdentifier(tempResponse.Short, tempResponse.Long));
                     };
+                    
                     var success = SCORM.RecordMultipleChoiceInteraction(questionData.strID, scormResponses, questionData.blnCorrect, scormCorrectResponses, questionData.strDescription.replace(/(<([^>]+)>)/ig, ""), questionData.intWeighting, questionData.intLatency, questionData.strLearningObjectiveID);
-                } catch(e) {
-                    console.log("MCH Error:" + e);
+                } catch (e) {
+                    console.log("MCH Error:"+e);
                 }
                 break;
             case 'TF':
                 try {
                     var success = SCORM.RecordTrueFalseInteraction(questionData.strID, questionData.response, questionData.blnCorrect, questionData.correctResponse, questionData.strDescription.replace(/(<([^>]+)>)/ig, ""), questionData.intWeighting, questionData.intLatency, questionData.strLearningObjectiveID);
-                } catch(e) {}
+                } catch (e) {}
                 break;
-            default:
-                throw("Cannot Track type:" + questionData.trackingType);
+            case 'MC':
+                try {
+                    var scormResponses = [],
+                        scormCorrectResponses = [],
+                        tempResponse;
+                    for (var i = 0,ln=questionData.response.length; i < ln; i++) {
+                        tempResponse =questionData.response[i];
+                        scormResponses.push(SCORM.CreateResponseIdentifier(tempResponse.Short, tempResponse.Long));
+                    };
+                    for (var i = 0,ln=questionData.correctResponse.length; i < ln; i++) {
+                        tempResponse =questionData.correctResponse[i];
+                        scormCorrectResponses.push(SCORM.CreateResponseIdentifier(tempResponse.Short, tempResponse.Long));
+                    };
+                    var success = SCORM.RecordMultipleChoiceInteraction(questionData.strID, scormResponses, questionData.blnCorrect, scormCorrectResponses, questionData.strDescription.replace(/(<([^>]+)>)/ig, ""), questionData.intWeighting, questionData.intLatency, questionData.strLearningObjectiveID);
+                } catch (e) {
+                    console.log("MC Error:"+e);
+                }
                 break;
             }
         }
