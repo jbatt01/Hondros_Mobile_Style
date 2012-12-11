@@ -146,7 +146,14 @@ Ext.define('Player.page.questions.Question', {
         this.callParent(arguments);
     },
     start: function() {
-        this.resizeScroller();
+        st = Ext.getStore("ScoTreeStore");
+                var pageNode = null;
+                for(var i=0,ln = st.data.all.length;i<ln;i++){
+                pageNode = st.data.all[i];
+                }
+				if(Player.settings.get('activateTimer')){
+				Player.app.fireEvent('startCountDown',pageNode);
+				}
     },
     cleanup: function(){},
     resizeScroller: function(){

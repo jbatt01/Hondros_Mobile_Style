@@ -206,6 +206,12 @@ Ext.define('Player.page.questions.Results', {
     initialize: function() {
         var me = this;
         me.callParent(arguments);
+		//Changed Code
+		if(Player.settings.get('activateTimer'))
+		{
+		Player.settings.set('activateTimer','false');
+		}
+		//Changed Code
         me.getComponent('reviewBtn').on('review', me.onReview, me);
         me.getComponent('emailBtn').on('email', me.onEmail, me);
         me.getComponent('printBtn').on('print', me.onPrint, me);
