@@ -1,0 +1,77 @@
+Lang = {
+	Loading__: "Loading...",
+	Table_Of_Contents__: "Table of Contents",
+	Close__: "Close",
+	PageOf__: "Page {1} of {2}",
+	Glossary__: "Glossary",
+	// Quiz
+	Check_Answer__: "Check Answer",
+	Reset__: "Reset",
+	Correct__: "Correct",
+	Incorrect__: "Incorrect",
+	Try_Again__: "Try Again",
+	Select_an_Option__: "Select an Option.",
+	Tap_CheckAnswer_Button__: "Tap the \"Check Answer\" button.",
+	Yes_that_is_correct__: "Yes, that is correct.",
+	No_that_is_incorrect__: "No, that is incorrect.",
+	Incorrect_Try_Again__: "That is incorrect. Try again.",
+	True__: "True",
+	False__: "False",
+	// Results
+	Sorry__: "Sorry!",
+	You_did_not_pass__: "You did not pass this course.",
+	Pass__: "Pass!",
+	Congrats_Pass__: "Congratulations! That's a passing score.",
+	Quiz_Results__: "Quiz Results",
+	Total_Correct__: "Total Correct__:",
+	Total_Incorrect__: "Total Incorrect__:",
+	Score__: "Score__:",
+	Possible_Score__: "Possible Score__:",
+	Percentage__: "Percentage__:",
+	Review__: "Review",
+	Email_Results__: "Email Results",
+	Print__: "Print",
+	Make_Sure_Send__: "Make sure you finish sending this email so the results will be sent to the appropriate person.",
+	Coure_Results_Email__: "Course results for the {title} course.",
+	Email_Quiz__: "Quiz__: ",
+	Email_User__: "User__: ",
+	Email_Learner__: "Learner__: ",
+	Email_DateCompleted__: "Date completed__: ",
+	Email_TotalCorrect__: "Total Correct Questions__: ",
+	Email_TotalIncorrect__: "Total Incorrect Questions__: ",
+	Email_Percent__: "Percent Correct__: ",
+	Email_Window__: "Email Window",
+	//EmailPopup
+	Email_Directions__: "<b>Directions__:</b> Enter your name (the quiz taker) and email address (the quiz taker's email) and tap <b>OK</b> to finish sending the results."
+	Enter_Name__: "Enter Name",
+	Name__: "Name__:",
+	Email__: "Email__:",
+	OK__: "OK",
+	// Review
+	Retake_Test__: "Retake Test",
+	Test_Results__: "Test Results__:",
+	Review_Score__: "Score {score}%",
+	Correct_of__: "{1} of {2} correct",
+	Your_Answers_Were__: "Your answers were__:",
+	C__: "C",
+	X__: "X",
+	N__: "&nbsp;",
+	Correct_Answer__: "Correct Answer__:",
+	Question_of__: "Question {1} of {2} - {status}",
+	// video
+	Video_Error__: "Video Error!",
+	Tap_To_Play__: "Tap to Play",
+	// Audio
+	Audio_Error0__: "Audio Error",
+	Audio_Error1__: "Error__: fetching process aborted by user",
+	Audio_Error2__: "Error__: error occurred when downloading",
+	Audio_Error3__: "Error__: error occurred when decoding",
+	Audio_Error4__: "Error__: audio not supported",
+	
+
+}
+
+function initLocalization() {
+
+	
+}

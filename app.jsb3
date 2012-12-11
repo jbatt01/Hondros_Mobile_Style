@@ -1,0 +1,455 @@
+{
+    "projectName": "Mobile Player",
+    "licenseText": "Copyright(c) 2012 Rapid Intake",
+    "builds": [
+        {
+            "name": "All Classes",
+            "target": "all-classes.js",
+            "options": {
+                "debug": true
+            },
+            "files": [
+                {
+                    "path": "",
+                    "name": "SCORM_db.js"
+                },
+                {
+                    "path": "app/page/components/",
+                    "name": "VideoPlayer.js",
+                    "clsName": "Player.page.components.VideoPlayer"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "Page.js",
+                    "clsName": "Player.page.Page"
+                },
+                {
+                    "path": "app/page/components/",
+                    "name": "TextImage.js",
+                    "clsName": "Player.page.components.TextImage"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "Video.js",
+                    "clsName": "Player.page.Video"
+                },
+                {
+                    "path": "app/page/Definitions/",
+                    "name": "Practice.js",
+                    "clsName": "Player.page.Definitions.Practice"
+                },
+                {
+                    "path": "app/layout/",
+                    "name": "Accordion.js",
+                    "clsName": "Player.layout.Accordion"
+                },
+                {
+                    "path": "app/page/Definitions/",
+                    "name": "Review.js",
+                    "clsName": "Player.page.Definitions.Review"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "ProgressBar.js",
+                    "clsName": "Player.view.ProgressBar"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "ImagePopup.js",
+                    "clsName": "Player.view.ImagePopup"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "EmailPopup.js",
+                    "clsName": "Player.page.questions.EmailPopup"
+                },
+                {
+                    "path": "app/page/questions/review/",
+                    "name": "Review.js",
+                    "clsName": "Player.page.questions.review.Review"
+                },
+                {
+                    "path": "app/page/questions/review/",
+                    "name": "TF.js",
+                    "clsName": "Player.page.questions.review.TF"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "Instructions.js",
+                    "clsName": "Player.page.questions.Instructions"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "FeedBackPopup.js",
+                    "clsName": "Player.page.questions.FeedBackPopup"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "Definitions.js",
+                    "clsName": "Player.page.Definitions"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "TextandVideo.js",
+                    "clsName": "Player.page.TextandVideo"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "TextandImageLink.js",
+                    "clsName": "Player.page.TextandImageLink"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "Text.js",
+                    "clsName": "Player.page.Text"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "TextandAudio.js",
+                    "clsName": "Player.page.TextandAudio"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "CustomHTML5Page.js",
+                    "clsName": "Player.page.CustomHTML5Page"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "CustomContent.js",
+                    "clsName": "Player.page.CustomContent"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "AudioBar.js",
+                    "clsName": "Player.view.AudioBar"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "ImageLinkandAudio.js",
+                    "clsName": "Player.page.ImageLinkandAudio"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "TextImageLinkandAudio.js",
+                    "clsName": "Player.page.TextImageLinkandAudio"
+                },
+                {
+                    "path": "app/page/components/",
+                    "name": "ImagePopup.js",
+                    "clsName": "Player.page.components.ImagePopup"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "TextImageandAudio.js",
+                    "clsName": "Player.page.TextImageandAudio"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "ImageandAudio.js",
+                    "clsName": "Player.page.ImageandAudio"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "ExternalSWFdefault.js",
+                    "clsName": "Player.page.ExternalSWFdefault"
+                },
+                {
+                    "path": "app/page/questions/review/",
+                    "name": "MC.js",
+                    "clsName": "Player.page.questions.review.MC"
+                },
+                {
+                    "path": "app/page/questions/review/",
+                    "name": "MCH.js",
+                    "clsName": "Player.page.questions.review.MCH"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "Review.js",
+                    "clsName": "Player.page.questions.Review"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "TextandImage.js",
+                    "clsName": "Player.page.TextandImage"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "Question.js",
+                    "clsName": "Player.page.questions.Question"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "MCH.js",
+                    "clsName": "Player.page.questions.MCH"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "TF.js",
+                    "clsName": "Player.page.questions.TF"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "MC.js",
+                    "clsName": "Player.page.questions.MC"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "Intro.js",
+                    "clsName": "Player.page.questions.Intro"
+                },
+                {
+                    "path": "app/page/questions/",
+                    "name": "Results.js",
+                    "clsName": "Player.page.questions.Results"
+                },
+                {
+                    "path": "app/page/",
+                    "name": "Quiz.js",
+                    "clsName": "Player.page.Quiz"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "ScoSetting.js",
+                    "clsName": "Player.model.ScoSetting"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Quiz.js",
+                    "clsName": "Player.model.Quiz"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Question.js",
+                    "clsName": "Player.model.Question"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "TableOfContents.js",
+                    "clsName": "Player.view.TableOfContents"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "UpperToolBar.js",
+                    "clsName": "Player.view.UpperToolBar"
+                },
+                {
+                    "path": "app/view/tablet/",
+                    "name": "UpperToolBar.js",
+                    "clsName": "Player.view.tablet.UpperToolBar"
+                },
+                {
+                    "path": "app/view/phone/",
+                    "name": "UpperToolBar.js",
+                    "clsName": "Player.view.phone.UpperToolBar"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Pages.js",
+                    "clsName": "Player.view.Pages"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "NarrationPanel.js",
+                    "clsName": "Player.view.NarrationPanel"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "TimerBar.js",
+                    "clsName": "Player.view.TimerBar"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Glossary.js",
+                    "clsName": "Player.view.Glossary"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "LowerToolBar.js",
+                    "clsName": "Player.view.LowerToolBar"
+                },
+                {
+                    "path": "app/view/tablet/",
+                    "name": "LowerToolBar.js",
+                    "clsName": "Player.view.tablet.LowerToolBar"
+                },
+                {
+                    "path": "app/view/phone/",
+                    "name": "LowerToolBar.js",
+                    "clsName": "Player.view.phone.LowerToolBar"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "HelpPanel.js",
+                    "clsName": "Player.view.HelpPanel"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Content.js",
+                    "clsName": "Player.view.Content"
+                },
+                {
+                    "path": "app/view/tablet/",
+                    "name": "Content.js",
+                    "clsName": "Player.view.tablet.Content"
+                },
+                {
+                    "path": "app/view/phone/",
+                    "name": "Content.js",
+                    "clsName": "Player.view.phone.Content"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Note.js",
+                    "clsName": "Player.view.Note"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Glossary.js",
+                    "clsName": "Player.model.Glossary"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "DockedToc.js",
+                    "clsName": "Player.view.DockedToc"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "FloatingToc.js",
+                    "clsName": "Player.view.FloatingToc"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "SettingsController.js",
+                    "clsName": "Player.controller.SettingsController"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "GlossaryPanel.js",
+                    "clsName": "Player.view.GlossaryPanel"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "PageController.js",
+                    "clsName": "Player.controller.PageController"
+                },
+                {
+                    "path": "app/profile/",
+                    "name": "Phone.js",
+                    "clsName": "Player.profile.Phone"
+                },
+                {
+                    "path": "app/profile/",
+                    "name": "Tablet.js",
+                    "clsName": "Player.profile.Tablet"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "GlossaryController.js",
+                    "clsName": "Player.controller.GlossaryController"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "QuizController.js",
+                    "clsName": "Player.controller.QuizController"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "PageList.js",
+                    "clsName": "Player.model.PageList"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "ScormController.js",
+                    "clsName": "Player.controller.ScormController"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "GlossaryTreeStore.js",
+                    "clsName": "Player.store.GlossaryTreeStore"
+                },
+                {
+                    "path": "app/controller/",
+                    "name": "TimeController.js",
+                    "clsName": "Player.controller.TimeController"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Quizes.js",
+                    "clsName": "Player.store.Quizes"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "PopUpPanel.js",
+                    "clsName": "Player.view.PopUpPanel"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "PageInfo.js",
+                    "clsName": "Player.view.PageInfo"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "PageModel.js",
+                    "clsName": "Player.model.PageModel"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "SupportedPages.js",
+                    "clsName": "Player.store.SupportedPages"
+                },
+                {
+                    "path": "app/model/",
+                    "name": "Help.js",
+                    "clsName": "Player.model.Help"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "ScoTreeStore.js",
+                    "clsName": "Player.store.ScoTreeStore"
+                },
+                {
+                    "path": "app/view/",
+                    "name": "Main.js",
+                    "clsName": "Player.view.Main"
+                },
+                {
+                    "path": "app/view/tablet/",
+                    "name": "Main.js",
+                    "clsName": "Player.view.tablet.Main"
+                },
+                {
+                    "path": "app/view/phone/",
+                    "name": "Main.js",
+                    "clsName": "Player.view.phone.Main"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "Helps.js",
+                    "clsName": "Player.store.Helps"
+                },
+                {
+                    "path": "app/store/",
+                    "name": "HiddenPages.js",
+                    "clsName": "Player.store.HiddenPages"
+                }
+            ]
+        },
+        {
+            "name": "Application - Production",
+            "target": "app-all.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "",
+                    "name": "all-classes.js"
+                },
+                {
+                    "path": "",
+                    "name": "app.js"
+                }
+            ]
+        }
+    ],
+    "resources": []
+}

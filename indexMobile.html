@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="resources/css/player.css"/>
+
+    <script type="text/javascript" src="local/lang.js"></script>
+    <script type="text/javascript">
+      var _GET = {};
+        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            _GET[key] = value;
+        });
+
+        var g_projectID=31305;
+        var autoHideToc = false;
+    </script>
+      <script type="text/javascript" src="sencha-touch-all.js"></script>
+    <script type="text/javascript" src="app-all.js"></script>
+  
+    <script type="text/javascript">
+        if (!Ext.browser.is.WebKit) {
+            alert("The current browser is unsupported.\n\nSupported browsers:\n" +
+                "Google Chrome\n" +
+                "Apple Safari\n" +
+                "Mobile Safari (iOS)\n" +
+                "Android Browser\n" +
+                "BlackBerry Browser"
+            );
+        }
+    </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    showProcessingMessages: false,
+    jax: ["input/TeX", "output/HTML-CSS"],
+    TeX: {
+      Augment: {
+        Definitions: {
+          macros: {
+            unitfrac: "myUnitFrac",
+            unit: "myUnit"
+          }
+        },
+        Parse: {
+          prototype: {
+            myUnitFrac: function(name) {
+              var n = this.GetBrackets(name),
+                num = this.GetArgument(name),
+                den = this.GetArgument(name);
+              if (n == null) {
+                n = ""
+              }
+              var tex = n + '\\,\\text{' + num + '}/\\text{' + den + '}';
+              this.string = tex + this.string.slice(this.i);
+              this.i = 0;
+            },
+            myUnit: function(name) {
+              var n = this.GetBrackets(name),
+                dim = this.GetArgument(name);
+              if (n == null) {
+                n = ""
+              }
+              var tex = n + '\\,\\text{' + dim + '}';
+              this.string = tex + this.string.slice(this.i);
+              this.i = 0;
+            }
+          }
+        }
+      }
+    },
+    tex2jax: {
+      inlineMath: [
+        ['$', '$'],
+        ["\\(", "\\)"]
+      ],
+      displayMath: [
+        ['$$', '$$'],
+        ["\\[", "\\]"]
+      ],
+      processEscapes: true
+    },
+    "HTML-CSS": {
+      availableFonts: ["TeX"]
+    }
+  });
+  </script>
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+  </script>
+
+</head>
+<body>
+  <div id="loadingstuff" class="x-mask x-floating" style="top: 0px !important; left: 0px !important; right: 0px !important; bottom: 0px !important; z-index: 2 !important;">
+  <div class="x-mask-inner" style="margin-top: 0px; margin-left: 0px;">
+      <div class="x-loading-spinner-outer">
+        <div class="x-loading-spinner">
+          <span class="x-loading-top"></span>
+          <span class="x-loading-right"></span>
+          <span class="x-loading-bottom"></span>
+          <span class="x-loading-left"></span>
+        </div>
+      </div>
+      <div class="x-mask-message">
+        <script type="text/javascript">document.write(Lang.Loading);</script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

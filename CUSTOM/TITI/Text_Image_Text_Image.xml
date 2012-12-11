@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<page helpLink='https://wiki.rapidintake.com/index.php/Working_with_Page_Templates#Text_and_Image_Template'>
+    <TitleTab label="Step 1: Title"/>
+    <Tab label="Step 3: Instructions">
+		<HTMLText label="Text 1" bind="text1" required="true" defaultValue="Read through the scenario carefully, then enter in how you would best respond to this scenario. Once you feel you have entered your best response, please submit your answer." helpText="These instructions will appear in a pop-up box before the interaction begins."/>
+		<Image label="Image 1 path" bind="image1.@path" helpText="Browse for the image file you want to add to this page by clicking on the folder icon.  You can choose one on your computer or one already uploaded."/>
+		<HTMLText label="Instructions Text" bind="text2" required="true" defaultValue="Read through the scenario carefully, then enter in how you would best respond to this scenario. Once you feel you have entered your best response, please submit your answer." helpText="These instructions will appear in a pop-up box before the interaction begins."/>
+		<Image label="Image 2 path" bind="image2.@path" helpText="Browse for the image file you want to add to this page by clicking on the folder icon.  You can choose one on your computer or one already uploaded."/>
+	</Tab>
+    <NoteTab label="Step 4: Note (optional)"/>
+    <AdvancedRegularTab label="Step 5: Advanced (optional)" 
+        contentFile="swfs/templateswfs/rapidintake_textimage/ri_textimage_pg.swf"
+		loadPercentage="0"
+	/>
+</page>
