@@ -6663,6 +6663,21 @@ Ext.define('Player.view.TableOfContents', {
             ]
         }
     },
+	//Changed Code
+	onItemTap : function(list, index, target, record, e) {
+				
+	 if(record.data.leaf != true && record.data.complete != true && record.data.restrictedTopicId !== false)
+	  {
+      
+	  }
+	  else
+	  {
+		    this.callParent(arguments); //call Ext.dataview.NestedList's onItemTap method
+	  }
+		
+    },
+	//Changed Code
+	
 
     setActiveItem: function(list) {
         var me = this,
@@ -6697,11 +6712,14 @@ Ext.define('Player.view.TableOfContents', {
 
     getItemTextTpl: function(node) {
         var checkIcon = 'resources/img/check02-12.png';
-        return  '<tpl if="leaf !=  true">'+
+        return  '<tpl if="leaf !=  true && restrictedTopicId === false">'+
         '<div style="width:202px; font-weight: bold; ">{title}</div><div style="position:absolute; right:0; top:25%; margin: 4px;"><img src="resources/img/tocArrow-02.png"/></div></div>'+
         '</tpl>'+
         '<tpl if="leaf === true && complete != true && restrictedTopicId !== false">'+
         '<span  class="tocLabelDisabled">{title}</span>'+
+        '</tpl>'+
+		'<tpl if="leaf != true && complete != true && restrictedTopicId !== false">'+
+        '<div style="border:0px;text-align:left;font-size:96%;font-weight: bold">{title}</div>'+
         '</tpl>'+
         '<tpl if="leaf === true && complete != true && restrictedTopicId === false">'+
         '<span  class="tocLabel">{title}</span>'+
@@ -10580,4 +10598,5 @@ Ext.define('Player.store.HiddenPages', {
         }
     }
 });
+
 
