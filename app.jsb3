@@ -1,6 +1,6 @@
 {
     "projectName": "Mobile Player",
-    "licenseText": "Copyright(c) 2012 Rapid Intake",
+    "licenseText": "Copyright(c) 2011 Rapid Intake",
     "builds": [
         {
             "name": "All Classes",
@@ -54,11 +54,6 @@
                     "clsName": "Player.view.ProgressBar"
                 },
                 {
-                    "path": "app/view/",
-                    "name": "ImagePopup.js",
-                    "clsName": "Player.view.ImagePopup"
-                },
-                {
                     "path": "app/page/questions/",
                     "name": "EmailPopup.js",
                     "clsName": "Player.page.questions.EmailPopup"
@@ -110,13 +105,8 @@
                 },
                 {
                     "path": "app/page/",
-                    "name": "CustomHTML5Page.js",
-                    "clsName": "Player.page.CustomHTML5Page"
-                },
-                {
-                    "path": "app/page/",
-                    "name": "CustomContent.js",
-                    "clsName": "Player.page.CustomContent"
+                    "name": "Html.js",
+                    "clsName": "Player.page.Html"
                 },
                 {
                     "path": "app/view/",
@@ -234,16 +224,6 @@
                     "clsName": "Player.view.UpperToolBar"
                 },
                 {
-                    "path": "app/view/tablet/",
-                    "name": "UpperToolBar.js",
-                    "clsName": "Player.view.tablet.UpperToolBar"
-                },
-                {
-                    "path": "app/view/phone/",
-                    "name": "UpperToolBar.js",
-                    "clsName": "Player.view.phone.UpperToolBar"
-                },
-                {
                     "path": "app/view/",
                     "name": "Pages.js",
                     "clsName": "Player.view.Pages"
@@ -269,16 +249,6 @@
                     "clsName": "Player.view.LowerToolBar"
                 },
                 {
-                    "path": "app/view/tablet/",
-                    "name": "LowerToolBar.js",
-                    "clsName": "Player.view.tablet.LowerToolBar"
-                },
-                {
-                    "path": "app/view/phone/",
-                    "name": "LowerToolBar.js",
-                    "clsName": "Player.view.phone.LowerToolBar"
-                },
-                {
                     "path": "app/view/",
                     "name": "HelpPanel.js",
                     "clsName": "Player.view.HelpPanel"
@@ -287,16 +257,6 @@
                     "path": "app/view/",
                     "name": "Content.js",
                     "clsName": "Player.view.Content"
-                },
-                {
-                    "path": "app/view/tablet/",
-                    "name": "Content.js",
-                    "clsName": "Player.view.tablet.Content"
-                },
-                {
-                    "path": "app/view/phone/",
-                    "name": "Content.js",
-                    "clsName": "Player.view.phone.Content"
                 },
                 {
                     "path": "app/view/",
@@ -332,16 +292,6 @@
                     "path": "app/controller/",
                     "name": "PageController.js",
                     "clsName": "Player.controller.PageController"
-                },
-                {
-                    "path": "app/profile/",
-                    "name": "Phone.js",
-                    "clsName": "Player.profile.Phone"
-                },
-                {
-                    "path": "app/profile/",
-                    "name": "Tablet.js",
-                    "clsName": "Player.profile.Tablet"
                 },
                 {
                     "path": "app/controller/",
@@ -412,16 +362,6 @@
                     "path": "app/view/",
                     "name": "Main.js",
                     "clsName": "Player.view.Main"
-                },
-                {
-                    "path": "app/view/tablet/",
-                    "name": "Main.js",
-                    "clsName": "Player.view.tablet.Main"
-                },
-                {
-                    "path": "app/view/phone/",
-                    "name": "Main.js",
-                    "clsName": "Player.view.phone.Main"
                 },
                 {
                     "path": "app/store/",
