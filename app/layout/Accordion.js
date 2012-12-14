@@ -54,7 +54,7 @@ Ext.define('Player.layout.Accordion', {
                 xtype: 'titlebar',
                 docked: 'top',
                 ui: 'light',
-                cls: 'def-toolbar',
+                cls: ['def-toolbar'],
                 title: item.title,
                 items: [{
                     cls: me.itemArrowCls,
@@ -69,6 +69,7 @@ Ext.define('Player.layout.Accordion', {
              titleDock.element.on('tap', me.onTitlebarTap, me);
 
             item.addCls(me.itemCls);
+            item.addCls('def-align-'+me.getArrowAlign());
             arrowBtn.addCls(me.itemArrowExpandedCls);
 
             item.on('painted', function() {

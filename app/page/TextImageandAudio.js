@@ -5,8 +5,6 @@ Ext.define('Player.page.TextImageandAudio', {
 
     requires: ['Player.page.components.TextImage','Player.view.AudioBar'],
 
-    mixins: ['Player.page.components.ImagePopup'],
-
     config: {
         layout: 'vbox',
         styleHtmlContent: true,
@@ -29,6 +27,11 @@ Ext.define('Player.page.TextImageandAudio', {
             cls: 'page-content',
             itemId: 'pageText'
         }, {
+            xtype: 'imagepopup',
+            itemId: 'imagePopup',
+            width: 200,
+            height: 200
+        }, {
             xtype: 'audiobar',
             itemId: 'audio'
         }],
@@ -41,7 +44,8 @@ Ext.define('Player.page.TextImageandAudio', {
 
     updatePageData: function(newPageData, oldPageData) {
         var me = this,
-            pText = '';
+            pText = '',
+            imagePopup = me.query('#imagePopup')[0];
 
         // Set Title
         me.getComponent('pageTitle').setHtml(newPageData.title);
@@ -54,7 +58,19 @@ Ext.define('Player.page.TextImageandAudio', {
         me.getComponent('audio').setMediaPath(newPageData.mediaPath);
 
         // Impage popup stuff
-        me.setImagePopupData(newPageData);
+        var imageFile = newPageData.imageFile;
+        if (imageFile) {
+            imagePopup.setImageFile(imageFile);
+        } else {
+            imagePopup.setHtml("No Image File");
+        }
+
+        var capHead = newPageData.captionhead;
+        var capText = newPageData.captiontext;
+        if (capHead || capText) {
+            imagePopup.setCaptionHead(capHead);
+            imagePopup.setCaptionText(capText);
+        }
 
         // Create Note
         if (newPageData.note) {
@@ -71,7 +87,8 @@ Ext.define('Player.page.TextImageandAudio', {
         }catch(e){}
     },
     imageTapHandler: function(e) {
-        this.showImagePopup();
+        var pop = imagePopup = this.query('#imagePopup')[0];
+        pop.show();
     },
 
     start: function() {
