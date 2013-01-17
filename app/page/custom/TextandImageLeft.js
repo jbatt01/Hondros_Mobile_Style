@@ -1,7 +1,7 @@
-Ext.define('Player.page.TextandImage', {
+Ext.define('Player.page.TextandImageLeft', {
     extend: 'Player.page.Page',
 
-    alias: ['widget.TextandImage'],
+    alias: ['widget.TextandImageLeft'],
 
     requires: ['Player.page.components.TextImage', 'Player.page.components.ImagePopup'],
 

@@ -7953,34 +7953,38 @@ Ext.define('Player.controller.PageController', {
         }
     },
 
-    createPage: function(pageNode) {
-        var newPage,
-            pType = pageNode.data.pType.replace(/ /g,'');
+        createPage: function(pageNode) {
+        var newPage;
+        var pType = pageNode.data.pType.replace(/ /g,'');
 
-        
-        if(Player.page[pType]){
-            console.log("CreatePage:"+pType+" - "+pageNode.raw.title);
+        console.log("PType:"+pType);
+        if(pType == 'ExternalSWFdefault' || 
+            pType == 'CustomContent'){
+            pType = 'CustomHTML5Page';
+        }
+        try{
+            console.log("Page:"+pType);
             newPage = Ext.create('Player.page.'+pType, {
                 pageData:pageNode.raw,
                 recordId:pageNode.id
             });
-        }
-        else{
+        }catch(e){
             try{
+                console.log("Custom:"+pType);
                 newPage = Ext.create('Player.page.custom.'+pType, {
                     pageData:pageNode.raw,
                     recordId:pageNode.id
-                });
-                console.log("CreatePage:"+pType+" - "+pageNode.raw.title);
-            }
-            catch(e){
-                console.log("CreatePage::CustomHTML5Page - "+pageNode.raw.title);
-                newPage = Ext.create('Player.page.CustomHTML5Page', {
+                }); 
+            }catch(e){
+                console.log("default text.("+pType+")"+e);
+                var altPType = 'CustomHTML5Page';
+                newPage = Ext.create('Player.page.'+altPType, {
                     pageData:pageNode.raw,
                     recordId:pageNode.id
                 });
             }
         }
+
         return newPage;
     },
 
